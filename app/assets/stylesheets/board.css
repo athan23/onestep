@@ -1,0 +1,10 @@
+.minesweeper-cell-square {
+  width: 24px;
+  height: 24px;
+  text-align: center;
+}
+
+.minesweeper-cell-content {
+  padding: 0;
+  margin: 0;
+}

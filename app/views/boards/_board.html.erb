@@ -1,0 +1,27 @@
+<div id="<%= dom_id board %>">
+  <p>
+    <strong>Name:</strong>
+    <%= board.name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= board.email %>
+  </p>
+
+  <table class="table-bordered">
+    <% board.height.times do |row| %>
+      <tr>
+        <% board.width.times do |col| %>
+          <td class="minesweeper-cell-square">
+            <% if board.tiles[row][col].to_i.negative? %>
+              <p class="minesweeper-cell-content"><i class="fa-solid fa-bomb fa-xs"></i></p>
+            <% else %>
+              <p class="minesweeper-cell-content"><%= board.tiles[row][col] %></p>
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</div>

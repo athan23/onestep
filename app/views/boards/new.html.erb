@@ -1,0 +1,31 @@
+<h1>Minesweeper Board Generator</h1>
+
+<%= render "form", board: @board %>
+
+<br>
+
+<div>
+  <h1>Ten most recent generated boards</h1>
+  <div id="boards">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Created at</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @last_ten_boards.each do |board| %>
+          <tr>
+            <td><%= link_to board.name, board %></td>
+            <td><%= board.email %></td>
+            <td><%= board.created_at.strftime('%e %B %Y %H:%M') %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%= link_to "View all generated boards", boards_path %>
